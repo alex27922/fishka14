@@ -23,10 +23,10 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
       transition={{ duration: 0.8 }}
     >
       <motion.div
-        className="text-6xl text-romantic-dusty-pink"
+        className="text-7xl text-rose-500 drop-shadow-[0_0_30px_rgba(244,63,94,0.8)]"
         animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.7, 1, 0.7],
+          scale: [1, 1.3, 1],
+          opacity: [0.9, 1, 0.9],
         }}
         transition={{
           duration: 1.2,

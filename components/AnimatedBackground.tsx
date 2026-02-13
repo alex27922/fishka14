@@ -21,11 +21,11 @@ export default function AnimatedBackground({ variant = 'gate' }: AnimatedBackgro
         }`}
       />
 
-      {/* Soft floating orbs — pastel */}
+      {/* Vivid floating orbs */}
       <motion.div
-        className="absolute w-96 h-96 rounded-full opacity-30 blur-3xl"
+        className="absolute w-96 h-96 rounded-full opacity-60 blur-3xl"
         style={{
-          background: 'radial-gradient(circle, rgba(248, 187, 217, 0.6) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(248, 100, 180, 0.8) 0%, rgba(248, 187, 217, 0.5) 40%, transparent 70%)',
           top: '20%',
           left: '10%',
         }}
@@ -33,9 +33,9 @@ export default function AnimatedBackground({ variant = 'gate' }: AnimatedBackgro
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute w-80 h-80 rounded-full opacity-25 blur-3xl"
+        className="absolute w-80 h-80 rounded-full opacity-50 blur-3xl"
         style={{
-          background: 'radial-gradient(circle, rgba(225, 213, 231, 0.7) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(201, 169, 212, 0.9) 0%, rgba(225, 213, 231, 0.6) 40%, transparent 70%)',
           top: '60%',
           right: '15%',
         }}
@@ -43,9 +43,9 @@ export default function AnimatedBackground({ variant = 'gate' }: AnimatedBackgro
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute w-72 h-72 rounded-full opacity-20 blur-3xl"
+        className="absolute w-72 h-72 rounded-full opacity-50 blur-3xl"
         style={{
-          background: 'radial-gradient(circle, rgba(255, 218, 185, 0.5) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(255, 182, 193, 0.9) 0%, rgba(255, 218, 185, 0.6) 40%, transparent 70%)',
           bottom: '20%',
           left: '30%',
         }}

@@ -71,8 +71,8 @@ function TransitionOverlay() {
       transition={{ duration: 1.2, ease: 'easeInOut' }}
     >
       <motion.div
-        className="text-5xl text-romantic-dusty-pink"
-        animate={{ scale: [0.8, 1.2, 1], opacity: [0, 1, 0] }}
+        className="text-7xl text-rose-500 drop-shadow-[0_0_40px_rgba(244,63,94,0.9)]"
+        animate={{ scale: [0.8, 1.4, 1], opacity: [0, 1, 0] }}
         transition={{ duration: 1.2 }}
       >
         ♥

@@ -37,12 +37,12 @@ export default function HeartsOnClick() {
         {hearts.map((heart) => (
           <motion.span
             key={heart.id}
-            className="fixed text-2xl text-romantic-dusty-pink pointer-events-none z-10"
+            className="fixed text-4xl text-rose-500 pointer-events-none z-10"
             style={{
               left: heart.x,
               top: heart.y,
               transform: 'translate(-50%, -50%)',
-              textShadow: '0 0 12px rgba(232, 180, 184, 0.8), 0 0 24px rgba(248, 187, 217, 0.5)',
+              textShadow: '0 0 20px rgba(244, 63, 94, 0.9), 0 0 40px rgba(248, 187, 217, 0.8), 0 0 60px rgba(251, 113, 133, 0.6)',
             }}
             initial={{ opacity: 1, scale: 0.5, y: 0 }}
             animate={{
