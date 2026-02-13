@@ -16,7 +16,7 @@ interface PasswordGateProps {
 
 /**
  * PasswordGate — Fullscreen romantic password entrance
- * Hint references "little fish" / cute nickname without revealing password
+ * Hint: Playfair Display (poetic) | UI: Poppins
  */
 export default function PasswordGate({ onSuccess }: PasswordGateProps) {
   const [password, setPassword] = useState('');
@@ -30,7 +30,6 @@ export default function PasswordGate({ onSuccess }: PasswordGateProps) {
     setIsSubmitting(true);
     setError(false);
 
-    // Simulate a brief moment for UX
     setTimeout(() => {
       const isValid = password.toLowerCase().trim() === valentineConfig.password.toLowerCase();
       if (isValid) {
@@ -61,12 +60,12 @@ export default function PasswordGate({ onSuccess }: PasswordGateProps) {
           delay: 0.2,
         }}
       >
-        {/* Romantic hint — references "little fish" / our nickname */}
-        <p className="text-center text-pink-200/90 text-lg md:text-xl font-elegant mb-6 leading-relaxed">
-          Рібка моя, введи секретне слово... (password = f....a)
+        {/* Poetic hint — Playfair Display */}
+        <p className="text-center text-romantic-charcoal/90 text-lg md:text-xl font-poetic mb-6 leading-relaxed">
+          Як ми називаємо одне одного?
           <br />
-          <span className="text-soft-lavender/90 text-base">
-            Як ми називаємо одне одного?
+          <span className="text-romantic-mauve/90 text-base">
+            Рібка моя, введи секретне слово... (password = f....a)
           </span>
         </p>
 
@@ -80,9 +79,9 @@ export default function PasswordGate({ onSuccess }: PasswordGateProps) {
                 setError(false);
               }}
               placeholder="Введи слово..."
-              className="w-full px-6 py-4 rounded-2xl bg-white/10 border border-white/20 
-                         text-white placeholder-pink-200/50 text-lg font-elegant
-                         focus:outline-none focus:ring-2 focus:ring-pink-400/50 focus:border-pink-400/50
+              className="w-full px-6 py-4 rounded-2xl bg-white/60 border border-romantic-dusty-pink/30
+                         text-romantic-charcoal placeholder-romantic-charcoal/50 text-lg font-ui
+                         focus:outline-none focus:ring-2 focus:ring-romantic-dusty-pink/50
                          transition-all duration-300"
               autoComplete="off"
               autoFocus
@@ -93,9 +92,9 @@ export default function PasswordGate({ onSuccess }: PasswordGateProps) {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
-                  className="mt-2 text-rose-300 text-sm text-center"
+                  className="mt-2 text-romantic-dusty-pink text-sm text-center font-ui"
                 >
-                  Спробуй ще раз, булка
+                  Спробуй ще раз, кохана
                 </motion.p>
               )}
             </AnimatePresence>
@@ -104,11 +103,10 @@ export default function PasswordGate({ onSuccess }: PasswordGateProps) {
           <motion.button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-4 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 
-                       text-white font-elegant text-lg font-semibold
-                       shadow-lg shadow-pink-500/30
-                       hover:shadow-pink-400/40 hover:scale-[1.02]
-                       active:scale-[0.98]
+            className="w-full py-4 rounded-2xl bg-romantic-dusty-pink/80 hover:bg-romantic-dusty-pink
+                       text-romantic-cream font-ui text-lg font-semibold
+                       shadow-lg shadow-romantic-dusty-pink/30
+                       hover:scale-[1.02] active:scale-[0.98]
                        disabled:opacity-70 disabled:cursor-not-allowed
                        transition-all duration-300"
             whileHover={{ scale: 1.02 }}
@@ -127,17 +125,12 @@ export default function PasswordGate({ onSuccess }: PasswordGateProps) {
           </motion.button>
         </form>
 
-        {/* Decorative hearts */}
-        <div className="flex justify-center gap-4 mt-8 text-pink-400/30 text-2xl">
+        <div className="flex justify-center gap-4 mt-8 text-romantic-dusty-pink/40 text-2xl">
           {['♥', '♦', '♥'].map((heart, i) => (
             <motion.span
               key={i}
               animate={{ opacity: [0.3, 0.7, 0.3] }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                delay: i * 0.3,
-              }}
+              transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
             >
               {heart}
             </motion.span>

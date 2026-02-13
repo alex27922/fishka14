@@ -2,17 +2,17 @@
 
 import RomanticText from './RomanticText';
 import PhotoConveyorRow from './PhotoConveyorRow';
+import SecretMessage from './SecretMessage';
 import { valentineConfig } from '@/config/valentine.config';
 
 /**
- * ValentineHero — Main artistic layout with conveyors and center text
+ * ValentineHero — Main layout with conveyors, center text, and secret message
  */
 export default function ValentineHero() {
   const { photos, headline, animationSpeed } = valentineConfig;
 
   return (
     <main className="relative min-h-screen flex flex-col justify-center">
-      {/* Photo conveyors — layered above and below center text */}
       <div className="space-y-2 md:space-y-4">
         <PhotoConveyorRow
           photos={photos.row1}
@@ -26,10 +26,8 @@ export default function ValentineHero() {
         />
       </div>
 
-      {/* Center romantic headline */}
       <RomanticText text={headline} />
 
-      {/* Lower conveyors */}
       <div className="space-y-2 md:space-y-4">
         <PhotoConveyorRow
           photos={photos.row3}
@@ -42,6 +40,8 @@ export default function ValentineHero() {
           speed={55 / animationSpeed.conveyorRow4}
         />
       </div>
+
+      {valentineConfig.effects.secretMessage && <SecretMessage />}
     </main>
   );
 }

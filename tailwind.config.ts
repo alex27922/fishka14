@@ -10,7 +10,8 @@ const config: Config = {
     extend: {
       fontFamily: {
         romantic: ['var(--font-great-vibes)', 'cursive'],
-        elegant: ['var(--font-cormorant)', 'serif'],
+        poetic: ['var(--font-playfair)', 'serif'],
+        ui: ['var(--font-poppins)', 'sans-serif'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
@@ -35,7 +36,14 @@ const config: Config = {
         'romantic-gradient': 'linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 25%, #4a1942 50%, #2d1b4e 75%, #1a0a2e 100%)',
       },
       colors: {
-        'soft-lavender': '#c4b5fd',
+        'romantic-cream': '#fef7f4',
+        'romantic-blush': '#fce4ec',
+        'romantic-rose': '#f8bbd9',
+        'romantic-dusty-pink': '#e8b4b8',
+        'romantic-charcoal': '#5c4a5a',
+        'romantic-lavender': '#e1d5e7',
+        'romantic-mauve': '#c9a9d4',
+        'romantic-peach': '#ffdab9',
       },
     },
   },

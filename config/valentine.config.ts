@@ -1,50 +1,62 @@
 /**
  * Valentine's Day Gift Configuration
- * Customize all content, photos, and behavior here.
+ * Customize all content, photos, captions, and behavior here.
  */
+
+export type PhotoItem = string | { src: string; caption?: string };
 
 export const valentineConfig = {
   // Password for the gate screen
   password: 'fishka',
 
   // Main romantic headline (displayed in center of main page)
-  headline: 'З 14 Лютого, Рібка моя! ❤️',
+  headline: 'Настенька, З 14 Лютого, Рібка моя! ❤️',
 
   // Animation speed multipliers (higher = faster)
   animationSpeed: {
-    conveyorRow1: 1,
-    conveyorRow2: 0.7,
-    conveyorRow3: 1.2,
-    conveyorRow4: 0.85,
+    conveyorRow1: 2,
+    conveyorRow2: 1.7,
+    conveyorRow3: 1.6,
+    conveyorRow4: 2,
   },
 
-  // Photo URLs for the conveyor rows
-  // Add your own photo URLs here — each row will loop these images
+  // Photos from /public — add captions with { src, caption } for hover
   photos: {
     row1: [
-      'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=400&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=400&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=300&fit=crop',
+      { src: '/018C7177-C5A7-4A5E-8AAE-19FC82596E52_1_105_c.jpeg', caption: 'Люблю тебя каждый день еще больше!' },
+      { src: '/074E03BA-9901-4CE1-80D4-0A271F8EFCBB_1_105_c.jpeg', caption: 'Моя красотка 🫵' },
+      { src: '/11B0841C-3C50-42A5-B822-344F668F0E98_1_105_c.jpeg', caption: 'Любовь моя 💖' },
+      { src: '/1CDD4B33-A46A-4497-9A6C-64CDDA02F424_1_105_c.jpeg', caption: 'Моя рыбка 🐟' },
     ],
     row2: [
-      'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop',
+      { src: '/309361F1-7CA8-4EDD-8DF9-4EBC0DC11F28_1_105_c.jpeg', caption: 'Сладкая!' },
+      { src: '/382A83F0-E1B8-4D79-9A2C-01BB92EC3E62_1_105_c.jpeg', caption: 'Булочка моя' },
+      { src: '/38E53314-5BD8-48A4-916F-0F7983B3B4C3_1_105_c.jpeg', caption: 'Я ценю тебя' },
+      { src: '/40B5E77B-B6D4-4E66-A8BF-EB0FA90E2322_1_105_c.jpeg', caption: 'Ты нужна мне!' },
     ],
     row3: [
-      'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=400&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=400&h=300&fit=crop',
+      { src: '/45AFB965-D7A0-4D23-911C-6B538E11B7A5_1_105_c.jpeg', caption: 'Влюблен в тебя!' },
+      { src: '/5FB899B6-67B2-4242-A3CF-34CE53691E5C_1_105_c.jpeg', caption: 'Моя малышка 💖' },
+      { src: '/64CB0825-22EC-4A35-8568-B4D8414B5F4C_1_105_c.jpeg', caption: 'Маленькааая!' },
+      { src: '/6B5862EB-3FD3-4CFD-B598-79A6FE5B4463_1_105_c.jpeg', caption: 'Бублик мой' },
     ],
     row4: [
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=300&fit=crop',
+      { src: '/6F88E7B8-A4F5-4C4D-AEF1-427FB1E4BDB7_1_105_c.jpeg', caption: 'Моя future wify 💖' },
+      { src: '/A29171DE-A446-402E-A278-660DCA495E97_1_105_c.jpeg', caption: 'Кися! ' },
+      { src: '/ADBFDF28-7CEC-493B-B026-FC35E7666D20_1_105_c.jpeg', caption: 'Зайка любимая!' },
+      { src: '/160AEF39-E617-4887-9D70-0C31D0F57F90_1_105_c.jpeg', caption: 'Моя нежность' },
     ],
+  },
+
+  // Secret message modal (bottom link)
+  secretMessage: {
+    triggerText: 'Жми сюда ❤️',
+    message: `Рыбочка моя, я тебя очень люблю и поздравляю тебя с этим днём!!
+    столько всего мы уже пройшли вместе, и я безумно щаслив быть влюбленным в тебя каждый день!
+    хочу что бы эта любовь длилась вечно!
+    Я тебя люблю! 
+    С днем всех влюбленных!
+    ❤️`,
   },
 
   // Optional: Background music URL (leave empty to disable)
@@ -53,6 +65,8 @@ export const valentineConfig = {
   // Enable/disable effects
   effects: {
     floatingParticles: true,
+    heartsOnClick: true,
+    secretMessage: true,
     parallax: true,
     cursorEffect: true,
     loadingScreen: true,

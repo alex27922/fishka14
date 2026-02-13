@@ -19,9 +19,10 @@ All content is configurable in **`config/valentine.config.ts`**:
 
 - **`password`** — Change the gate password
 - **`headline`** — Main romantic text in the center
-- **`photos`** — Replace placeholder URLs with your own photos (row1, row2, row3, row4)
+- **`photos`** — Replace with your photos. Use `"url"` or `{ src: "url", caption: "Наш перший вечір" }` for hover captions
+- **`secretMessage`** — Trigger text and love letter content
 - **`animationSpeed`** — Adjust conveyor scroll speeds
-- **`effects`** — Toggle particles, cursor, loading screen
+- **`effects`** — Toggle particles, hearts on click, secret message, cursor, loading screen
 
 ## Deploy to Vercel
 

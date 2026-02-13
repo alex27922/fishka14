@@ -7,7 +7,7 @@ interface RomanticTextProps {
 }
 
 /**
- * RomanticText — Cinematic headline with glow and breathing animation
+ * RomanticText — Hero headline with breathing glow and subtle float
  */
 export default function RomanticText({ text }: RomanticTextProps) {
   return (
@@ -19,19 +19,21 @@ export default function RomanticText({ text }: RomanticTextProps) {
     >
       <motion.h1
         className="font-romantic text-4xl md:text-6xl lg:text-7xl text-center
-                   bg-gradient-to-r from-pink-200 via-rose-300 to-pink-200
+                   bg-gradient-to-r from-romantic-charcoal via-romantic-dusty-pink to-romantic-charcoal
                    bg-clip-text text-transparent text-glow
                    drop-shadow-2xl"
         animate={{
+          opacity: [0.9, 1, 0.9],
+          scale: [1, 1.02, 1],
+          y: [0, -3, 0],
           textShadow: [
-            '0 0 20px rgba(233, 30, 140, 0.5), 0 0 40px rgba(244, 114, 182, 0.3)',
-            '0 0 30px rgba(233, 30, 140, 0.7), 0 0 50px rgba(244, 114, 182, 0.4)',
-            '0 0 20px rgba(233, 30, 140, 0.5), 0 0 40px rgba(244, 114, 182, 0.3)',
+            '0 0 20px rgba(232, 180, 184, 0.4), 0 0 40px rgba(248, 187, 217, 0.2)',
+            '0 0 30px rgba(232, 180, 184, 0.6), 0 0 50px rgba(248, 187, 217, 0.3)',
+            '0 0 20px rgba(232, 180, 184, 0.4), 0 0 40px rgba(248, 187, 217, 0.2)',
           ],
-          y: [0, -4, 0],
         }}
         transition={{
-          duration: 4,
+          duration: 3,
           repeat: Infinity,
           ease: 'easeInOut',
         }}

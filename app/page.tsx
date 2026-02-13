@@ -6,6 +6,7 @@ import PasswordGate from '@/components/PasswordGate';
 import ValentineHero from '@/components/ValentineHero';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import FloatingParticles from '@/components/FloatingParticles';
+import HeartsOnClick from '@/components/HeartsOnClick';
 import LoadingScreen from '@/components/LoadingScreen';
 import MusicToggle from '@/components/MusicToggle';
 import { valentineConfig } from '@/config/valentine.config';
@@ -18,10 +19,7 @@ export default function Home() {
   );
   const [showCursorEffect, setShowCursorEffect] = useState(false);
 
-  const handleLoadingComplete = useCallback(() => {
-    setState('gate');
-  }, []);
-
+  const handleLoadingComplete = useCallback(() => setState('gate'), []);
   const handlePasswordSuccess = useCallback(() => {
     setState('transition');
     setTimeout(() => setState('main'), 1200);
@@ -33,33 +31,27 @@ export default function Home() {
 
   return (
     <>
-      {/* Apply romantic cursor when enabled (heart cursor) */}
       <div className={showCursorEffect ? 'romantic-cursor' : ''}>
-      <AnimatedBackground variant={state === 'gate' ? 'gate' : 'main'} />
+        <AnimatedBackground variant={state === 'gate' ? 'gate' : 'main'} />
 
-      <AnimatePresence mode="wait">
-        {state === 'loading' && valentineConfig.effects.loadingScreen && (
-          <LoadingScreen onComplete={handleLoadingComplete} />
+        <AnimatePresence mode="wait">
+          {state === 'loading' && valentineConfig.effects.loadingScreen && (
+            <LoadingScreen onComplete={handleLoadingComplete} />
+          )}
+          {state === 'gate' && (
+            <PasswordGate onSuccess={handlePasswordSuccess} />
+          )}
+          {state === 'transition' && <TransitionOverlay />}
+          {state === 'main' && <MainContent />}
+        </AnimatePresence>
+
+        {valentineConfig.effects.floatingParticles && state === 'main' && (
+          <FloatingParticles />
         )}
-
-        {state === 'gate' && (
-          <PasswordGate onSuccess={handlePasswordSuccess} />
+        {valentineConfig.effects.heartsOnClick && state === 'main' && (
+          <HeartsOnClick />
         )}
-
-        {state === 'transition' && (
-          <TransitionOverlay />
-        )}
-
-        {state === 'main' && (
-          <MainContent />
-        )}
-      </AnimatePresence>
-
-      {valentineConfig.effects.floatingParticles && state === 'main' && (
-        <FloatingParticles />
-      )}
-
-      {state === 'main' && <MusicToggle />}
+        {state === 'main' && <MusicToggle />}
       </div>
     </>
   );
@@ -68,7 +60,8 @@ export default function Home() {
 function TransitionOverlay() {
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-[#1a0a2e] to-[#4a1942]"
+      className="fixed inset-0 z-50 flex items-center justify-center
+                 bg-gradient-to-br from-romantic-cream via-romantic-blush to-romantic-lavender"
       initial={{ opacity: 0, filter: 'blur(0px)' }}
       animate={{
         opacity: [0, 1, 1, 0],
@@ -78,7 +71,7 @@ function TransitionOverlay() {
       transition={{ duration: 1.2, ease: 'easeInOut' }}
     >
       <motion.div
-        className="text-5xl text-pink-400"
+        className="text-5xl text-romantic-dusty-pink"
         animate={{ scale: [0.8, 1.2, 1], opacity: [0, 1, 0] }}
         transition={{ duration: 1.2 }}
       >

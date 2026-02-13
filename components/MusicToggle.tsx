@@ -4,10 +4,6 @@ import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { valentineConfig } from '@/config/valentine.config';
 
-/**
- * MusicToggle — Ambient background music with play/pause button
- * Add your music URL to valentine.config.ts → backgroundMusicUrl
- */
 export default function MusicToggle() {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -35,8 +31,8 @@ export default function MusicToggle() {
   return (
     <motion.button
       onClick={toggle}
-      className="fixed bottom-6 right-6 z-30 w-14 h-14 rounded-full glass flex items-center justify-center
-                 text-pink-300 hover:text-pink-200 hover:scale-110 transition-transform"
+      className="fixed bottom-24 right-6 z-30 w-14 h-14 rounded-full glass flex items-center justify-center
+                 text-romantic-charcoal hover:text-romantic-dusty-pink hover:scale-110 transition-transform"
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 1 }}

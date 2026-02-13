@@ -13,7 +13,7 @@ interface Particle {
 }
 
 /**
- * FloatingParticles — Sparkles reacting to mouse movement
+ * FloatingParticles — Sparkles reacting to mouse (pastel palette)
  */
 export default function FloatingParticles() {
   const [particles, setParticles] = useState<Particle[]>([]);
@@ -21,15 +21,16 @@ export default function FloatingParticles() {
 
   useEffect(() => {
     const count = 25;
-    const newParticles: Particle[] = Array.from({ length: count }, (_, i) => ({
-      id: i,
-      x: (Math.random() - 0.5) * 200,
-      y: (Math.random() - 0.5) * 200,
-      size: Math.random() * 3 + 1,
-      delay: Math.random() * 2,
-      duration: 4 + Math.random() * 5,
-    }));
-    setParticles(newParticles);
+    setParticles(
+      Array.from({ length: count }, (_, i) => ({
+        id: i,
+        x: (Math.random() - 0.5) * 200,
+        y: (Math.random() - 0.5) * 200,
+        size: Math.random() * 12 + 8,
+        delay: Math.random() * 2,
+        duration: 4 + Math.random() * 5,
+      }))
+    );
   }, []);
 
   useEffect(() => {
@@ -47,7 +48,7 @@ export default function FloatingParticles() {
       {particles.map((p) => (
         <motion.div
           key={p.id}
-          className="absolute rounded-full bg-pink-300/30"
+          className="absolute rounded-full bg-romantic-dusty-pink/30"
           style={{
             left: `${20 + (p.id * 3) % 60}%`,
             top: `${15 + (p.id * 7) % 70}%`,
@@ -57,7 +58,7 @@ export default function FloatingParticles() {
           animate={{
             x: [0, p.x + mouse.x, 0],
             y: [0, p.y + mouse.y, 0],
-            opacity: [0.15, 0.6, 0.15],
+            opacity: [0.15, 0.5, 0.15],
           }}
           transition={{
             duration: p.duration,
